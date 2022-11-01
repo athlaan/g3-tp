@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const codeSchema = new Schema ({
   gameCode: String,
   name: String,
-  rating: String
+  rating: Number
 });
 
 const GameInfo = mongoose.model('GameInfo', codeSchema);

@@ -1,0 +1,33 @@
+body {
+    background-color: darkslateblue;
+}
+
+h1 {
+    text-align: center;
+    color: violet;
+    text-decoration: underline;
+}
+
+h2 {
+    text-align: center;
+    color: violet;
+}
+
+h3 {
+    text-align: center;
+    color: violet;
+}
+
+input {
+    width: 30%;
+  height: 30px;
+    margin: .5rem
+}
+
+button {
+    margin: 1%;
+    padding: 1em 2em;
+    border: none;
+    background: rgb(100, 200, 255);
+    cursor: pointer;
+  }
