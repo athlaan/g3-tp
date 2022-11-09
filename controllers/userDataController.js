@@ -1,10 +1,11 @@
 import UserData from "../models/Usuario.js";
 
 const postUserData = (req, res) => {
-    userdata = UserData(req.body)
-    .save((err, userdata) => {
-        res.status(201).json(userdata);
-    });
+    const { name, eMail, steamAccount} = req.body;
+    const user = new UserData({ name, eMail, steamAccount });
+  user.save((err, user) => {
+    res.status(201).json(user);
+  });
 };
 
 const userController = {
