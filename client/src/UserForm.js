@@ -1,6 +1,8 @@
 import { func } from "prop-types";
 import { useState, Component } from "react";
 import AgeForm from "./AgeForm.js";
+import axios from "axios";
+
 
 const UserForm = (props) => {
   const [data, setData] = useState({
@@ -17,64 +19,59 @@ const UserForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setHidden(true);
+    setDisplayedItems(AgeForm);
     console.log(data);
+    
+    axios.post('/site/users', data)
+    .then( res => {
+      console.log(res.data)
+      setData('')
+    }
+    );
   };
+
+
+
 
   const [DisplayedItems, setDisplayedItems] = useState([]);
 
-  function handleClick(event) {
-    event.preventDefault();
-    console.log(typeof DisplayedItems);
-    setDisplayedItems(AgeForm);
-  }
-
-  const [hidden, setHidden] = useState(true);
+  const [hidden, setHidden] = useState(false);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <center>
-        {hidden ? (
+    <div>
+      <form hidden={hidden} onSubmit={handleSubmit}>
+        <center>
           <h3>Rellenar el siguiente formulario para continuar</h3>
-        ) : null}
-        {hidden ? <label>Nombre</label> : null}
-        {hidden ? (
+          <label>Nombre</label>
           <input
             type="text"
             onChange={handleChange}
             name="nombre"
             value={data.nombre}
           />
-        ) : null}
-        {hidden ? <br /> : null}
-        {hidden ? <label>Email</label> : null}
-        {hidden ? (
+          <br />
+          <label>Email</label>
           <input
             type="email"
             onChange={handleChange}
             name="email"
             value={data.email}
           />
-        ) : null}
-        {hidden ? <br /> : null}
-        {hidden ? <label>Steam</label> : null}
-        {hidden ? (
+          <br />
+          <label>Steam</label>
           <input
             type="text"
             onChange={handleChange}
             name="steam"
             value={data.steam}
           />
-        ) : null}
-        <br />
-        {hidden ? (
-          <button onClick={() => setHidden((s) => !s)}>Enviar</button>
-        ) : null}
-        {!hidden ? (
-          <button onClick={(event) => handleClick(event)}> Continuar </button>
-        ) : null}
-      </center>
+          <br />
+          <input type="submit" value="Enviar" />
+        </center>
+      </form>
       {DisplayedItems}
-    </form>
+    </div>
   );
 };
 
