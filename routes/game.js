@@ -8,6 +8,8 @@ gameRouter.route('/games/:code')
     .delete(gameController.deleteGameCode);
     
 gameRouter.route('/games')
+    .get(gameController.gamesOver16)
+    .get(gameController.gamesOver7)
     .post(gameController.postGameCode);
 
 export default gameRouter;

@@ -12,7 +12,7 @@ const AgeForm = (props) => {
   );
 }
 
-function AgeDataOne() {
+function AgeDataSmall() {
   return (
     <div>
       <h1>Juegito 1</h1>
@@ -25,7 +25,7 @@ function AgeDataOne() {
   );
 }
 
-function AgeDataTwo() {
+function AgeDataBig() {
   return (
     <div>
       <h1>Juegito 4</h1>
@@ -47,7 +47,7 @@ const AgeData16 = (props) => {
       {hidden ? (<button onClick={() => setHidden((s) => !s)}>
         A partir de 16 años
       </button>) : null}
-      {!hidden ? (<AgeDataTwo />) : null}
+      {!hidden ? (<AgeDataBig />) : null}
     </div>
   );
 };
@@ -62,7 +62,7 @@ const AgeData7 = (props) => {
       {hidden ? (<button onClick={() => setHidden((s) => !s)}>
         A partir de 7 años
       </button>) : null}
-      {!hidden ? (<AgeDataOne />) : null}
+      {!hidden ? (<AgeDataSmall />) : null}
     </div>
   );
 };
