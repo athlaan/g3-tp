@@ -9,7 +9,9 @@ gameRouter.route('/games/:code')
     
 gameRouter.route('/games')
     .get(gameController.gamesOver16)
-    .get(gameController.gamesOver7)
     .post(gameController.postGameCode);
 
+gameRouter.route('/games/over7')
+    .get(gameController.gamesOver7);
+    
 export default gameRouter;

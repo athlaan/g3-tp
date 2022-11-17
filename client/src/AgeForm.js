@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect ,useState } from "react";
 
 const AgeForm = (props) => {
 
@@ -25,18 +25,18 @@ function AgeDataSmall() {
   );
 }
 
-function AgeDataBig() {
+function AgeDataBig()  {
   return (
-    <div>
-      <h1>Juegito 4</h1>
-      <p>Ta piola</p>
-      <h1>Juegito 5</h1>
-      <p>Un poco mas piola</p>
-      <h1>Juegito 6</h1>
-      <p>Por tirar este</p>
-    </div>
+    
+    useEffect(() => {
+      axios.get('site/games')
+        .then(res => {
+          console.log(res.data);
+        })
+    })
+    
   );
-}
+};
 
 const AgeData16 = (props) => {
 
