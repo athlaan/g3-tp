@@ -27,7 +27,7 @@ const postGameCode = (req, res) => {
 };
 
 const deleteGameCode = (req, res) => {
-  GameInfo.findByIdAndDelete(req.params.id, err => {
+  GameInfo.findByIdAndDelete(req.params.code, err => {
     const msg = { text: 'juego borrado' };
     res.status(200).json(msg);
   });

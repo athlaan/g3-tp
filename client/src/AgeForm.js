@@ -1,4 +1,5 @@
 import { useEffect ,useState } from "react";
+import axios from "axios";
 
 const AgeForm = (props) => {
 
@@ -14,16 +15,16 @@ const AgeForm = (props) => {
 
 function AgeDataSmall() {
   return (
-    <div>
-      <h1>Juegito 1</h1>
-      <p>Ta piola</p>
-      <h1>Juegito 2</h1>
-      <p>Un poco mas piola</p>
-      <h1>Juegito 3</h1>
-      <p>Por tirar este</p>
-    </div>
+    
+    useEffect(() => {
+      axios.get('site/gamesover7')
+        .then(res => {
+          console.log(res.data);
+        })
+    })
+
   );
-}
+};
 
 function AgeDataBig()  {
   return (
@@ -34,7 +35,7 @@ function AgeDataBig()  {
           console.log(res.data);
         })
     })
-    
+
   );
 };
 
