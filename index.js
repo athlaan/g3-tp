@@ -6,7 +6,7 @@ import cors from "cors";
 
 //Config vars
 const PORT = process.env.PORT || 4000;
-const DB = process.env.DB || "mongodb+srv://<alansito>:<Capo1125>@cluster0.2ka7m0v.mongodb.net/?retryWrites=true&w=majority";
+const DB = process.env.DB || "mongodb+srv://Thiago:<Lordlol10>@cluster0.jvegjgn.mongodb.net/?retryWrites=true&w=majority";
 //"mongodb://127.0.0.1/trivia";
 //"mongodb+srv://Thiago:<Lordlol10>@cluster0.jvegjgn.mongodb.net/?retryWrites=true&w=majority";
 //Conectarse a la DB
