@@ -1,5 +1,7 @@
 import { useEffect ,useState } from "react";
 import axios from "axios";
+import Games7 from ".//Games7";
+import Games16 from ".//Games16";
 
 const AgeForm = (props) => {
 
@@ -27,14 +29,18 @@ function AgeDataSmall() {
 };
 
 function AgeDataBig()  {
+  
+  const [games, SetGames] = useState ([]);
+
   return (
     
     useEffect(() => {
       axios.get('site/games')
         .then(res => {
           console.log(res.data);
+          SetGames(res.data);
         })
-    })
+    }, [])
 
   );
 };
@@ -48,7 +54,7 @@ const AgeData16 = (props) => {
       {hidden ? (<button onClick={() => setHidden((s) => !s)}>
         A partir de 16 años
       </button>) : null}
-      {!hidden ? (<AgeDataBig />) : null}
+      {!hidden ? (<Games16 />) : null}
     </div>
   );
 };
@@ -63,7 +69,7 @@ const AgeData7 = (props) => {
       {hidden ? (<button onClick={() => setHidden((s) => !s)}>
         A partir de 7 años
       </button>) : null}
-      {!hidden ? (<AgeDataSmall />) : null}
+      {!hidden ? (<Games7 />) : null}
     </div>
   );
 };
