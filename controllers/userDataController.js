@@ -8,8 +8,15 @@ const postUserData = (req, res) => {
   });
 };
 
+const getUserData = (req, res) => {
+  UserData.find((err, users) => {
+    res.status(200).json(users);
+  });
+};
+
 const userController = {
-    postUserData
+    postUserData,
+    getUserData
 };
 
 export default userController;
