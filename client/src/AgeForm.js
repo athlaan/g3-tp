@@ -15,35 +15,6 @@ const AgeForm = (props) => {
   );
 }
 
-function AgeDataSmall() {
-  return (
-    
-    useEffect(() => {
-      axios.get('site/gamesover7')
-        .then(res => {
-          console.log(res.data);
-        })
-    })
-
-  );
-};
-
-function AgeDataBig()  {
-  
-  const [games, SetGames] = useState ([]);
-
-  return (
-    
-    useEffect(() => {
-      axios.get('site/games')
-        .then(res => {
-          console.log(res.data);
-          SetGames(res.data);
-        })
-    }, [])
-
-  );
-};
 
 const AgeData16 = (props) => {
 
@@ -92,5 +63,6 @@ const AgeData7 = (props) => {
     </div>
   );
 };*/
+
 
 export default AgeForm;

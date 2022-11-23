@@ -13,7 +13,9 @@ const Games16 = () => {
             })
         }, [])
 
-
+        return (
+          <p>Juegos</p>
+        );
 };
 
 export default Games16;

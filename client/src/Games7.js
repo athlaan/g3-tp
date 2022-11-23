@@ -14,9 +14,7 @@ const Games7 = () => {
         }, []);
   
         return (
-            games.map((game) => {
-                
-            })
+            <p>juegito.com</p>
         );
 } 
 
